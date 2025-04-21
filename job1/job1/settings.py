@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import oauth2_provider.oauth2_backends
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,10 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs.apps.JobsConfig',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'rest_framework',
+    'drf_yasg',
+    'oauth2_provider',
+
 ]
 
 CKEDITOR_UPLOAD_PATH ="images/ckeditor/"
+
+REST_FRAMEWORK = {
+'DEFAULT_AUTHENTICATION_CLASSES': (
+'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+)}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,3 +144,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import cloudinary
+# Configuration
+cloudinary.config(
+    cloud_name = "dizsmwu7t",
+    api_key = "631536123377314",
+    api_secret = "GGxJ5VeCXoVshTkbsGphdyhGbr4", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)
+
+OAUTH2_PROVIDER = {
+    'OAUTH2_BACKEND_CLASS' : 'oauth2_provider.oauth2_backends.JSONOAuthLibCore'
+}
+
+CLIENT_ID = 'gJi5atdVdGtaiifO5cwZh9oefofw5ASUZfKlx6r9'
+CLIENT_SECRET = 'hXLy9eY0nNU2kMDVTGNhykmSVq1idnr6gsY2gWsqKQDiiqwwDt2xwgtfXLAWYUSr1scDuO1WyPD7cPUAGJL9bTSYoPQ8RGTwM4jAys2Bozu3LPrs2ZafrsUkwnZizegG'
