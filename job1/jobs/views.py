@@ -5,11 +5,12 @@ from rest_framework import viewsets, generics, permissions, parsers, status
 from rest_framework.response import Response
 
 from . import  serializers,paginators
-from .models import Category, Recruitment, New, User,Comment, Like
+from .models import Category, Recruitment, New, User,Comment, Like, UserProfile
 from . import perms
+from .perms import IsOwner
 
 
-class CategoryViewsSet(viewsets.ViewSet, generics.ListAPIView):
+class CategoryViewSet(viewsets.ViewSet, generics.ListAPIView):
     queryset = Category.objects.filter(active=True)
     serializer_class = serializers.CategorySerializer
 
@@ -87,13 +88,14 @@ class CommentViewSet(viewsets.ViewSet, generics.DestroyAPIView, generics.UpdateA
     serializer_class = serializers.CommentSerializer
     permission_classes = [perms.OwnerPerms]
 
-class UserViewSet(viewsets.ViewSet, generics.CreateAPIView):
+class UserViewSet(viewsets.ViewSet, generics.CreateAPIView ):
     queryset =  User.objects.filter(is_active = True)
     serializer_class = serializers.UserSerializer
     parser_classes = [parsers.MultiPartParser]
+    permission_classes = [perms.OwnerPerms]
 
 
-    @action(methods=['get', 'patch'], url_path='current-user', detail=False, permission_classes=[permissions.IsAuthenticated])
+    @action(methods=['get', 'patch','delete'], url_path='current-user', detail=False, permission_classes=[permissions.IsAuthenticated])
     #detail false vi khong the ma co id ma tim lay duoc user
     def get_user(self,request):
         u = request.user
@@ -101,8 +103,24 @@ class UserViewSet(viewsets.ViewSet, generics.CreateAPIView):
             for k,v in request.data.items():
                 if k in ['first_name','last_name']:
                     setattr(u,k,v)
-                elif k.__eq__('passowrd'):
+                elif k.__eq__('password'):
                     u.set_password(v)
             u.save()
+
         return Response(serializers.UserSerializer(u).data)
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.UserProfileSerialize
+    permission_classes = [permissions.IsAuthenticated, IsOwner]
+    # permissions.IsAuthenticated chi ap dung khi ma dang nhap ma thoi con neu muon thay doi quyen chi user khong thi phai chinh lai
+
+    def get_queryset(self):
+        # chi cho xem nhung ho so chinh minh
+        return UserProfile.objects.filter(user=self.request.user, active = True)
+
+    def perform_create(self, serializer):
+        # Gan user cho ho so moi
+        serializer.save(user=self.request.user)
+
+
 

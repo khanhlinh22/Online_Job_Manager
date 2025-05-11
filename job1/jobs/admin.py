@@ -61,8 +61,10 @@ class NewAdmin(admin.ModelAdmin):
     readonly_fields = ['avatar']
     form =NewForm
 
-    def avatar(self,new):
-        return mark_safe(f"<img src='/static{new.image.name}' width='120'")
+    def avatar(self, new):
+        if new.image:
+            return mark_safe(f"<img src='{new.image.url}' width='120' />")
+        return "No image"
 
     # class Media:
     #     css = {
@@ -77,3 +79,5 @@ admin_site.register(Tag)
 admin_site.register(User)
 admin_site.register(Comment)
 admin_site.register(New,NewAdmin)
+
+

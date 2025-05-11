@@ -5,7 +5,7 @@ from rest_framework.routers import DefaultRouter
 from  . import views
 
 r= DefaultRouter()
-r.register('categories', views.CategoryViewsSet, basename='cate')
+r.register('categories', views.CategoryViewSet, basename='cate')
 r.register('recruitments', views.RecruitmentViewSet, basename='recruitment')
 r.register('news', views.NewViewSet, basename='new')
 r.register('users', views.UserViewSet, basename='user')

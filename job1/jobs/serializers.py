@@ -71,3 +71,10 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
+
+class UserProfileSerialize(serializers.ModelSerializer):
+    class Meta:
+        model = New
+        fields = ['id', 'first_name', 'last_name', 'phone', 'position', 'image']
+        read_only_fields = ['user']
+
