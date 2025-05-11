@@ -14,7 +14,7 @@ class CategoryViewSet(viewsets.ViewSet, generics.ListAPIView):
     queryset = Category.objects.filter(active=True)
     serializer_class = serializers.CategorySerializer
 
-class RecruitmentViewSet(viewsets.ViewSet, generics.ListAPIView):
+class RecruitmentViewSet(viewsets.ViewSet, generics.ListAPIView,generics.DestroyAPIView):
     queryset = Recruitment.objects.filter(active=True)
     serializer_class = serializers.RecruitmentSerializer
     pagination_class = paginators.RecruitmentPaginator
@@ -37,7 +37,7 @@ class RecruitmentViewSet(viewsets.ViewSet, generics.ListAPIView):
         news = self.get_object().new_set.filter(active=True)
         return Response(serializers.NewSerializer(news,many=True).data)
 
-class NewViewSet(viewsets.ViewSet, generics.RetrieveAPIView):
+class NewViewSet(viewsets.ViewSet, generics.RetrieveAPIView,generics.DestroyAPIView):
     queryset = New.objects.prefetch_related('tags').filter(active = True)
     serializer_class = serializers.NewDetailSerializer
 

@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce9281f3-3f0b-4385-86c0-daffbacd1f81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/job1/jobs/templates/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/job1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/job1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0002_recruitment_new.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0003_rename_dscript_recruitment_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0004_rename_type_recruitment_scription.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0005_alter_new_content.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0006_alter_recruitment_scription.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0007_alter_recruitment_scription.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0008_tag_new_tags.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0009_comment_like.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/migrations/0010_user_avatar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/paginators.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/paginators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/perms.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/perms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job1/jobs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job1/jobs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job1/jobs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobmobileapp1/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobmobileapp1/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobmobileapp1/configs/APIs.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobmobileapp1/configs/APIs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobmobileapp1/styles/MyStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/jobmobileapp1/styles/MyStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +31,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.models.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Online_Job_Manager\job1\jobs" />
